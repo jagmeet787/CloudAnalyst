@@ -436,6 +436,7 @@ public class ConfigureSimulationPanel extends JPanel
 				Constants.LOAD_BALANCE_POLICY_RR, 
 				Constants.LOAD_BALANCE_ACTIVE,
 				Constants.LOAD_BALANCE_THROTTLED,
+				Constants.LOAD_BALANCE_CENTRAL_MANAGER
 		});
 		cmbLoadBalancingPolicy.setSelectedItem(simulation.getLoadBalancePolicy());
 		cmbLoadBalancingPolicy.setBounds(x, y, compW, compH);
