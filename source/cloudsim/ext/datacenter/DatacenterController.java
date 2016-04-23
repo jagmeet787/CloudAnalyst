@@ -104,11 +104,7 @@ public class DatacenterController extends DatacenterBroker implements GeoLocatab
 		} else if (loadBalancePolicy.equals(Constants.LOAD_BALANCE_POLICY_RR)){
 			this.loadBalancer = new RoundRobinVmLoadBalancer(vmStatesList);
 		} else if (loadBalancePolicy.equals(Constants.LOAD_BALANCE_CENTRAL_MANAGER)){
-			System.out.println("\n=================================="
-					+ "\nFile: cloudsim.ext.datacenter.DataCenterController"
-					+ "\nline: 107\nThis will be for our implementation\n"
-					+ "=========================================\n");
-			this.loadBalancer = new RoundRobinVmLoadBalancer(vmStatesList);
+			this.loadBalancer = new ThresholdVmLoadBalancer(this);
 		} else { //i.e. if (loadBalancePolicy.equals(Constants.LOAD_BALANCE_THROTTLED))
 			this.loadBalancer = new ThrottledVmLoadBalancer(this);
 		}
